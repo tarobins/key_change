@@ -26,6 +26,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Key key = ValueKey('key0');
+  ItemScrollController itemScrollController = ItemScrollController();
 
   void changeKey() {
     setState(() {
@@ -43,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ScrollablePositionedList.builder(
           key: key,
           itemCount: 4,
+          itemScrollController: itemScrollController,
           itemBuilder: (context, index) => ConstrainedBox(
             constraints: BoxConstraints.tightFor(height: 60),
             child: DecoratedBox(
